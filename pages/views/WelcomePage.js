@@ -6,12 +6,14 @@ export default class HomePage extends Component {
      this.navigation = navigation;
   }
   render() {
-    const navigate = this.props.navigation.navigate
+    const navigate = this.props.navigation.navigate;
+    const tintColor = this.props.route.params.tintColor;
+    let obj = Object.assign({},styles.welcome,{ color:tintColor })
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>WelcomePage</Text>
+        <Text style={obj}>WelcomePage</Text>
         <Button title="返回home" onPress={() => {
-          navigate('Home', { tintColor: 'green' })
+          navigate('Home', { tintColor: '#999' })
         }}></Button>
       </View>
     )
